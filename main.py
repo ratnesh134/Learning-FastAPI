@@ -2,6 +2,10 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-@app.get("/")
+@app.get("/")  # Decorator
 async def root():
-    return {"message" : "Hello World"}
+    return {"message" : "Welcome to my api"}
+
+@app.get("/posts")
+def get_post():
+    return {"data" : "This is your post"}
